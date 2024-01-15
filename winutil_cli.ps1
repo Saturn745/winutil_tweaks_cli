@@ -32,6 +32,7 @@ Param(
     [psobject[]]$ExtraWindowsFeaturesBundles = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/feature.json'),
     [string]$TranscriptPath = "$ENV:TEMP\Winutil.log",
     [switch]$Force
+    [switch]$NoRestorePoint
 )
 if ($Force -and -not $Confirm) {
     $ConfirmPreference = 'None'
@@ -597,7 +598,9 @@ function Invoke-WinUtil {
   }
   
   if ($TweakNames -or $WindowsFeaturesBundles) {
-    New-RestorePoint
+      if (-not $NoRestorePoint) {
+          New-RestorePoint
+      }
   }
   if ($DNSProvider) {
     Set-WinUtilDNSProvider -DNSProvider $DNSProvider -dns $dns
