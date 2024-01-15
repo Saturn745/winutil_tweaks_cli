@@ -31,7 +31,7 @@ Param(
     [psobject[]]$ExtraDNSProviders = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/dns.json'),
     [psobject[]]$ExtraWindowsFeaturesBundles = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/feature.json'),
     [string]$TranscriptPath = "$ENV:TEMP\Winutil.log",
-    [switch]$Force
+    [switch]$Force,
     [switch]$NoRestorePoint
 )
 if ($Force -and -not $Confirm) {
