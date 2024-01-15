@@ -28,7 +28,7 @@ Param(
     [Parameter(ParameterSetName = 'ListCommand')]
     [switch]$ListDNSProviders,
     [Parameter(ParameterSetName = 'NoRestorePoint')]
-    [switch]$NoRestorePoint
+    [switch]$NoRestorePoint,
     [psobject[]]$ExtraTweaks = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/tweaks.json'),
     [psobject[]]$ExtraDNSProviders = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/dns.json'),
     [psobject[]]$ExtraWindowsFeaturesBundles = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/feature.json'),
