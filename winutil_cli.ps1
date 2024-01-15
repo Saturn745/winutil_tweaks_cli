@@ -3605,7 +3605,7 @@ function Get-Config {
                 elseif ([System.Uri]::IsWellFormedUriString($InputObject, [System.UriKind]::Absolute)) {
                     # Remote File
                     if ($PsCmdlet.ShouldProcess($InputObject, 'Fetching extras from url')) {
-                        $JsonString = Invoke-WebRequest $InputObject
+                        $JsonString = Invoke-WebRequest -useb $InputObject
                     }
                 }
                 else {
