@@ -27,12 +27,13 @@ Param(
     [switch]$ListFeatureBundles,
     [Parameter(ParameterSetName = 'ListCommand')]
     [switch]$ListDNSProviders,
+    [Parameter(ParameterSetName = 'NoRestorePoint')]
+    [switch]$NoRestorePoint
     [psobject[]]$ExtraTweaks = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/tweaks.json'),
     [psobject[]]$ExtraDNSProviders = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/dns.json'),
     [psobject[]]$ExtraWindowsFeaturesBundles = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/feature.json'),
     [string]$TranscriptPath = "$ENV:TEMP\Winutil.log",
-    [switch]$Force,
-    [switch]$NoRestorePoint
+    [switch]$Force
 )
 if ($Force -and -not $Confirm) {
     $ConfirmPreference = 'None'
