@@ -21,14 +21,14 @@ Param(
     [string[]]$WindowsFeaturesBundles,
     [Parameter(ParameterSetName = 'Tweaks')]
     [switch]$Undo,
+    [Parameter(ParameterSetName = 'Tweaks')]
+    [switch]$NoRestorePoint,
     [Parameter(ParameterSetName = 'ListCommand')]
     [switch]$ListTweaks,
     [Parameter(ParameterSetName = 'ListCommand')]
     [switch]$ListFeatureBundles,
     [Parameter(ParameterSetName = 'ListCommand')]
     [switch]$ListDNSProviders,
-    [Parameter(ParameterSetName = 'Tweaks')]
-    [switch]$NoRestorePoint,
     [psobject[]]$ExtraTweaks = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/tweaks.json'),
     [psobject[]]$ExtraDNSProviders = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/dns.json'),
     [psobject[]]$ExtraWindowsFeaturesBundles = @('https://raw.githubusercontent.com/ChrisTitusTech/winutil/main/config/feature.json'),
